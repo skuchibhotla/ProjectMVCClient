@@ -1,0 +1,48 @@
+﻿@model ProjectMVCClient.ServiceReference1.tblEmployee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tblEmployee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mgr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mgr)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
